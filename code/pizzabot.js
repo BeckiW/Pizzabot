@@ -4,15 +4,13 @@ const pepperoni = "Pepperoni Pizza"
 
 const pizzaPrice = 80
 
-//Put your Javscript code here:
 
-setTimeout(function() {
-  alert(`Hey! Happy to serve your pizza. On our menu we have ${vegetarian}, ${hawaiian} and ${pepperoni}`);
+alert(`Hey! Happy to serve your pizza. On our menu we have ${vegetarian}, ${hawaiian} and ${pepperoni}`);
 
-  let orderName = prompt("Enter the name of the pizza you want to order today.");
+let orderName = prompt("Enter the name of the pizza you want to order today.");
 
   function checkOrderName() {
-    if (orderName === "Vegetarian Pizza" || orderName === "Vegetarian" || orderName === "Hawaiian Pizza" || ordered === "Hawaiian" || orderName === "Pepperoni Pizza") {
+    if (orderName === 'Vegetarian Pizza' || orderName === 'Vegetarian' || orderName === 'Hawaiian Pizza' || ordered === 'Hawaiian' || orderName === 'Pepperoni Pizza') {
       alert(`You ordered ${orderName}`);
     } else {
       prompt(`We don't have that order right now, please try again`)
@@ -22,13 +20,24 @@ setTimeout(function() {
   let orderQuantity = prompt(`And how many of ${orderName}/s do you want?`)
   alert(orderQuantity);
 
-let cost = totalCost(orderQuantity, pizzaPrice) {
+const totalCost = (orderQuantity, pizzaPrice) => {
     let orderTotal = orderQuantity * pizzaPrice
     return orderTotal
   }
 
-    alert(`Great, Ill get started on your ${orderQuantity} ${orderName} pizza/s right away, it will cost ${cost} kr`)
+  totalCost(orderQuantity, pizzaPrice)
 
-}, 2);
+  const calculateTime = (orderQuantity) => {
 
-setTimeout()
+    if (orderQuantity == 1 || orderQuantity == 2) {
+      return 10
+    } else if (orderQuantity == 3 || orderQuantity == 4 || orderQuantity == 5) {
+        return 15
+    } else {
+        return 20
+    }
+  }
+
+  calculateTime(orderQuantity)
+
+  alert(`Great, Ill get started on your ${orderQuantity} ${orderName} pizza/s right away, it will cost ${totalCost} kr. The pizzas will take ${calculateTime} minutes.`)
