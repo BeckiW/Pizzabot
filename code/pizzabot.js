@@ -25,7 +25,7 @@ const totalCost = (orderQuantity, pizzaPrice) => {
     return orderTotal
   }
 
-  totalCost(orderQuantity, pizzaPrice)
+  let cost = totalCost(orderQuantity, pizzaPrice)
 
   const calculateTime = (orderQuantity) => {
 
@@ -38,6 +38,6 @@ const totalCost = (orderQuantity, pizzaPrice) => {
     }
   }
 
-  calculateTime(orderQuantity)
+  let cookingTime = calculateTime(orderQuantity)
 
-  alert(`Great, Ill get started on your ${orderQuantity} ${orderName} pizza/s right away, it will cost ${totalCost} kr. The pizzas will take ${calculateTime} minutes.`)
+  alert(`Great, Ill get started on your ${orderQuantity} ${orderName} pizza/s right away, it will cost ${cost} kr. The pizzas will take ${cookingTime} minutes.`)
